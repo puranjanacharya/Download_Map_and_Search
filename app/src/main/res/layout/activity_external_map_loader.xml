@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.here.sdkexample.ExternalMapLoaderActivity">
+
+    <com.here.android.mpa.mapping.MapView
+        android:id="@+id/ext_mapview"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.here.tcsdemo.CustomAutoCompleteTextView
+        android:id="@+id/geo_autocomplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:hint = "@string/search_add"
+        android:singleLine="true"
+        android:imeOptions="flagNoExtractUi|actionSearch"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_alignLeft="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout"
+        tools:background="@android:color/background_light" />
+    <fragment
+        android:id="@+id/mapfragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.here.android.mpa.mapping.MapFragment" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ext_progressBar"
+            android:background="@android:color/white"
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:max="100"
+            android:visibility="invisible" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download Map"
+            android:id="@+id/ext_download_btn"
+            android:onClick="onDownloadButtonClicked" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove all maps"
+            android:id="@+id/ext_removeall_btn"
+            android:onClick="onRemoveAllButtonClicked" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check for map updates"
+            android:id="@+id/ext_checkForUpdate_btn"
+            android:onClick="onCheckMapUpdatesButtonClicked" />
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.here.tcsdemo"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <activity android:name=".ExternalMapLoaderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Credentials -->
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="yebbjhwPzCJYStYj9fqi" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="OqOu3yJRXIpW_3xERNGLwg" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="hNIeXemkOY4m21gw0HF05IUNZ2tzROgD7mNgaJAfnZdeBD12JH7fQY8EAulUES1079+6f5oxQod35Vqxgqfgsilx/a2d/Ovnb6l/Y6VsfzLoddsfTDL5ZEpbItBcGkhEXhIEP2gMH57/pVp1uyjU4jcIaJ7F9o0xSYx50/qoXuY6Nbwf9unv+hGuPmR1Gykx3RUM+Jh8n1XxcWFhf8eJ+PhvYo4rIwpuXWiu/jYbBUxbCGOFHJfVd3W+17I3ZZc7CSimeBtev5Lx3Ek+nxaTeHNWf9nlK3Xyl9y+bftFh5PYxWAnETlNYs40RP024B5lfsYZLROLT8TpzR0WE+453bxZ3kY1W9G59U4x5N3CnNItRAOY3MNVlwFw5j/cFMmakLqZKzge8hBJrJoqHHFfqJ1VZpQVS1aX47qXWYHrFPZnVHHYQlT1o67GMkKqGzpdj3yXk15xA04B9RcfGYbTWFa2NKBbVbU3sKcK9QMinHEBO5rhEg7+SbZT2SrJsPTHBLiUAg3Oae5y3soS6M96b2lTelq91mw6uG9LfJETokriXl1+4QaQveEHxuyLO5T7EyESLrjKymuYtftEQxwwiKYO1E7nCsCt7HQkIW+pg9TPN0n5KpNGpzDysOkQ5+u/p4W5RIcKFahb19e93ESC7GHZlsuhii8aixbWyIwBMvw=" />
+
+        <!--
+             Embed the HERE Map Service.
+            For more information, see the HERE SDK Developer's Guide
+        -->
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:exported="true"
+            android:label="HereMapService"
+            android:process="global.Here.Map.Service.v2">
+            <intent-filter>
+                <action android:name="com.here.android.mpa.service.MapService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
